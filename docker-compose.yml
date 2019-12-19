@@ -1,0 +1,17 @@
+version: "2.3"
+services:
+  base: &base
+    image: kfujikawa/docker-nlp:${TAG:-latest}
+    network_mode: "bridge"
+    init: true
+  en:
+    <<: *base
+    build:
+      context: .
+      target: en
+  ja:
+    <<: *base
+    image: kfujikawa/docker-nlp-ja:${TAG:-latest}
+    build:
+      context: .
+      target: ja

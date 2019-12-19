@@ -1,0 +1,38 @@
+# General packages
+kaggle==1.5.6
+prompter==0.3.10
+joblib==0.13.2
+parameterized==0.7.0
+luigi==2.8.9
+colorlog==4.0.2
+ipdb==0.12.2
+pudb==2019.2
+swifter==0.296
+pytest-cov==2.8.1
+
+# ML packages
+pandas==0.25.3
+scikit-learn==0.21.3
+catalyst==19.11.6
+lightgbm==2.3.1
+catboost==0.20.1
+xgboost==0.90
+
+# Experiment management packages
+graphql-core==2.0
+mlcomp==19.10.1
+comet_ml==2.0.17
+wandb==0.8.15
+
+# Jupyter packages
+jupyterlab==1.2.4
+seaborn==0.9.0
+tqdm==4.37.0
+
+# NLP modules
+nltk==3.4.5
+gensim==3.8.1
+sentencepiece==0.1.8
+unidecode==1.0.23
+transformers==2.1.1
+allennlp==0.9.0
