@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
         curl bzip2 software-properties-common pkg-config ca-certificates \
         cmake autoconf automake libtool flex sudo git tzdata openssh-server \
         libglib2.0-0 libxext6 libsm6 libxrender1 libreadline-dev \
-        graphviz libgraphviz-dev build-essential && \
+        graphviz libgraphviz-dev build-essential htop && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set timezone
