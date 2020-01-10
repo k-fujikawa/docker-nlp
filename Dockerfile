@@ -42,6 +42,13 @@ ENV DOCKER_NLP_DIR /opt/docker-nlp
 ADD requirements.txt $DOCKER_NLP_DIR/requirements.txt
 RUN pip install -r $DOCKER_NLP_DIR/requirements.txt
 
+# install jupyter and its extensions
+RUN jupyter nbextension enable --py widgetsnbextension
+RUN jupyter labextension install \
+    @jupyterlab/toc \
+    @jupyter-widgets/jupyterlab-manager \
+    @mflevine/jupyterlab_html
+
 WORKDIR /work
 
 # =====   Japanese-only environments   =====
