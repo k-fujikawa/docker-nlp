@@ -43,11 +43,9 @@ ADD requirements.txt $DOCKER_NLP_DIR/requirements.txt
 RUN pip install -r $DOCKER_NLP_DIR/requirements.txt
 
 # install jupyter and its extensions
+ADD labextensions.txt $DOCKER_NLP_DIR/labextensions.txt
 RUN jupyter nbextension enable --py widgetsnbextension
-RUN jupyter labextension install \
-    @jupyterlab/toc \
-    @jupyter-widgets/jupyterlab-manager \
-    @mflevine/jupyterlab_html
+RUN cat $DOCKER_NLP_DIR/labextensions.txt | xargs jupyter labextension install
 
 WORKDIR /work
 
