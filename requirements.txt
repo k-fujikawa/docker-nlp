@@ -11,6 +11,7 @@ swifter==0.296
 pytest-cov==2.8.1
 dataclasses==0.7
 inflection==0.3.1
+line_profiler==3.0.2
 
 # ML packages
 pandas==0.25.3
@@ -33,11 +34,12 @@ seaborn==0.9.0
 tqdm==4.37.0
 ipython-autotime==0.1
 nbdime==1.1.0
+py-heat-magic==0.0.2
 
 # NLP modules
 nltk==3.4.5
 gensim==3.8.1
 sentencepiece==0.1.8
 unidecode==1.0.23
-transformers==2.1.1
+transformers==2.3.0
 allennlp==0.9.0
