@@ -18,10 +18,10 @@ jobs:
       run: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
 
     - name: Build the Docker image
-      run: TAG=v1 docker-compose build
+      run: TAG=latest docker-compose build
 
     - name: push image [en]
-      run: docker push kfujikawa/docker-nlp:v1
+      run: docker push kfujikawa/docker-nlp:latest
 
     - name: push image [ja]
-      run: docker push kfujikawa/docker-nlp-ja:v1
+      run: docker push kfujikawa/docker-nlp-ja:latest
