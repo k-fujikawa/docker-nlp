@@ -3,7 +3,7 @@ name: Build & Deploy Docker Image
 on:
   push:
     branches:    
-    - master
+      - master
 
 jobs:
 
@@ -12,22 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: docker login
-      env:
-        DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
-        DOCKERHUB_PASS: ${{ secrets.DOCKERHUB_PASS }}
-      run: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
+      - name: docker login
+        env:
+          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+          DOCKERHUB_PASS: ${{ secrets.DOCKERHUB_PASS }}
+        run: docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
 
-    - name: Build the Docker image [en]
-      run: TAG=latest docker-compose build en
+      - name: Build the Docker image [en]
+        run: TAG=latest docker-compose build en
 
-    - name: push image [en]
-      run: docker push kfujikawa/docker-nlp:latest
+      - name: push image [en]
+        run: docker push kfujikawa/docker-nlp:latest
 
-    - name: Build the Docker image [ja]
-      run: TAG=latest docker-compose build ja
+      - name: Build the Docker image [ja]
+        run: TAG=latest docker-compose build ja
 
-    - name: push image [ja]
-      run: docker push kfujikawa/docker-nlp-ja:latest
+      - name: push image [ja]
+        run: docker push kfujikawa/docker-nlp:latest-ja
