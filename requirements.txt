@@ -17,29 +17,31 @@ line_profiler==3.0.2
 pandas==0.25.3
 scikit-learn==0.21.3
 catalyst==20.1.3
-pytorch-lightning==0.5.3
+pytorch-lightning==0.7.1
+pytorch-ignite==0.3.0
 lightgbm==2.3.1
 catboost==0.20.1
 xgboost==0.90
 
 # Experiment management packages
 graphql-core==2.0
-mlcomp==19.10.1
-comet_ml==2.0.17
+comet_ml==3.1.2
 wandb==0.8.15
+hydra-core==0.11.3
 
 # Jupyter packages
-jupyterlab==1.2.4
-seaborn==0.9.0
-tqdm==4.37.0
+jupyterlab==2.0.1
+seaborn==0.10.0
+tqdm==4.43.0
 ipython-autotime==0.1
 nbdime==1.1.0
 py-heat-magic==0.0.2
+plotly==4.5.4
 
 # NLP modules
 nltk==3.4.5
 gensim==3.8.1
-sentencepiece==0.1.8
+sentencepiece==0.1.85
 unidecode==1.0.23
-transformers==2.3.0
+transformers==2.5.1
 allennlp==0.9.0

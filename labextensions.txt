@@ -1,6 +1,5 @@
 @jupyter-widgets/jupyterlab-manager
 @jupyterlab/toc
-@mflevine/jupyterlab_html
 nbdime-jupyterlab
-jupyterlab-plotly@1.4.0
-plotlywidget@1.4.0
+jupyterlab-plotly@1.5.4
+plotlywidget@1.5.4

@@ -9,4 +9,4 @@ dependencies:
   - flake8
   - pytest
   - nodejs
-  - pytorch=1.3.0
+  - pytorch=1.4.0
