@@ -11,7 +11,7 @@ services:
       target: en
   ja:
     <<: *base
-    image: kfujikawa/docker-nlp-ja:${TAG:-latest}
+    image: kfujikawa/docker-nlp:${TAG:-latest}-ja
     build:
       context: .
       target: ja
