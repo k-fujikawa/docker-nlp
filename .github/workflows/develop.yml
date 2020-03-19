@@ -1,0 +1,18 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches:
+    - !master
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build the Docker image
+      run: TAG=latest docker-compose build
