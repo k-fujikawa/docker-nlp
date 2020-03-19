@@ -42,7 +42,8 @@ ENV DOCKER_NLP_DIR /opt/docker-nlp
 ADD requirements.txt $DOCKER_NLP_DIR/requirements.txt
 RUN pip install -r $DOCKER_NLP_DIR/requirements.txt
 
-# install jupyter and its extensions
+# # install jupyter and its extensions
+ENV NODE_OPTIONS --max-old-space-size=4096
 ADD labextensions.txt $DOCKER_NLP_DIR/labextensions.txt
 RUN jupyter nbextension enable --py widgetsnbextension
 RUN cat $DOCKER_NLP_DIR/labextensions.txt | xargs jupyter labextension install

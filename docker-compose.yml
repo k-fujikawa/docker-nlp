@@ -11,15 +11,7 @@ services:
       target: en
   ja:
     <<: *base
-    image: kfujikawa/docker-nlp-ja:${TAG:-latest}
+    image: kfujikawa/docker-nlp:${TAG:-latest}-ja
     build:
       context: .
       target: ja
-  jupyter: &jupyter
-    <<: *base
-    ports:
-      - "${PORT:-8888}:${PORT:-8888}"
-    command:
-      bash -c "
-      jupyter lab --ip 0.0.0.0 --allow-root --port ${PORT:-8888}
-      "

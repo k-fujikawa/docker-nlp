@@ -3,7 +3,7 @@ name: Build Docker Image
 on:
   push:
     branches:
-    - !master
+    - develop
 
 jobs:
 
@@ -14,5 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Build the Docker image
-      run: TAG=latest docker-compose build
+    - name: Build the Docker image [en]
+      run: TAG=latest docker-compose build en
+
+    - name: Build the Docker image [ja]
+      run: TAG=latest docker-compose build ja
