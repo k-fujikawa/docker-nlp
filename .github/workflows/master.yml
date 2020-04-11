@@ -30,4 +30,4 @@ jobs:
         run: TAG=latest docker-compose build ja
 
       - name: push image [ja]
-        run: docker push kfujikawa/docker-nlp:latest-ja
+        run: docker push kfujikawa/docker-nlp:ja
