@@ -3,7 +3,7 @@ FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04 AS en
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -qq && apt-get install -y -qq \
         curl bzip2 software-properties-common pkg-config ca-certificates \
         cmake autoconf automake libtool flex sudo git tzdata openssh-server \
         libglib2.0-0 libxext6 libsm6 libxrender1 libreadline-dev \
@@ -17,14 +17,14 @@ RUN echo $TZ > /etc/timezone && rm /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
 # Install miniconda
-ENV MINICONDA_VERSION 4.5.11
-RUN curl -s -o miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh && \
+ENV MINICONDA_VERSION 4.7.12.1
+RUN curl -s -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh && \
     bash miniconda.sh -b -p /opt/miniconda && rm miniconda.sh
 ENV PATH /opt/miniconda/bin:$PATH
 
 # Create conda environments and install modules
 ADD environment.yml /src/environment.yml
-RUN conda env update -f /src/environment.yml
+RUN conda env update -q -f /src/environment.yml && conda clean --all -y
 
 # Install NVIDIA Apex
 RUN mkdir -p /opt/packages/NVIDIA && cd /opt/packages/NVIDIA && \
