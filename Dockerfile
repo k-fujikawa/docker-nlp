@@ -42,7 +42,7 @@ ENV DOCKER_NLP_DIR /opt/docker-nlp
 ADD requirements.txt $DOCKER_NLP_DIR/requirements.txt
 RUN pip install -r $DOCKER_NLP_DIR/requirements.txt
 
-# # install jupyter and its extensions
+# Install jupyter and its extensions
 ENV NODE_OPTIONS --max-old-space-size=4096
 ADD labextensions.txt $DOCKER_NLP_DIR/labextensions.txt
 RUN jupyter nbextension enable --py widgetsnbextension
@@ -59,7 +59,8 @@ RUN mkdir -p /opt/packages/jumanpp && cd /opt/packages/jumanpp && \
     wget -q https://github.com/ku-nlp/jumanpp/releases/download/v2.0.0-rc2/jumanpp-2.0.0-rc2.tar.xz && \
     tar xvf jumanpp-2.0.0-rc2.tar.xz && cd jumanpp-2.0.0-rc2 && \
     mkdir build && cd build && \
-    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && make install -j2
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && make install -j2 && \
+    rm -rf /opt/packages/jumanpp
 
 # Install Mecab
 RUN apt-get update -y && apt-get install -y \
