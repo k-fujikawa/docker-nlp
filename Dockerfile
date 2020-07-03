@@ -27,8 +27,9 @@ ADD environment.yml /src/environment.yml
 RUN conda env update -q -f /src/environment.yml && conda clean --all -y
 
 # Install NVIDIA Apex
+ENV NVIDIA_APEX_VERSION 37cdaf4
 RUN mkdir -p /opt/packages/NVIDIA && cd /opt/packages/NVIDIA && \
-    git clone https://github.com/NVIDIA/apex.git && cd apex && git checkout 37cdaf4 && \
+    git clone https://github.com/NVIDIA/apex.git && cd apex && git checkout $NVIDIA_APEX_VERSION && \
     pip install --no-cache-dir --global-option='--cpp_ext' --global-option='--cuda_ext' .
 
 # Setup configuration files
