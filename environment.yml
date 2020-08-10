@@ -1,12 +1,16 @@
 name: base
 channels:
   - pytorch
+  - conda-forge
 dependencies:
-  - python=3.6.6
+  - python=3.7.7
+  - xeus-python=0.8.1
+  - pip=19.1
   - numpy
   - scipy
   - cython
   - flake8
   - pytest
   - nodejs
-  - pytorch=1.4.0
+  - pytorch=1.5.1
+  - cudatoolkit=10.1
