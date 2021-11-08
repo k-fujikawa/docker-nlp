@@ -34,7 +34,7 @@ jupyterlab==2.1.5
 seaborn==0.10.1
 tqdm==4.48.2
 ipython-autotime==0.1
-nbdime==1.1.0
+nbdime==1.1.1
 py-heat-magic==0.0.2
 plotly==4.9.0
 
