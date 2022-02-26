@@ -27,7 +27,7 @@ optuna==2.0.0
 graphql-core==2.0
 comet_ml==3.1.16
 omegaconf==2.0.0
-mlflow==1.8.0
+mlflow==1.23.1
 
 # Jupyter packages
 jupyterlab==2.1.5
