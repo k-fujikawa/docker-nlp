@@ -11,7 +11,7 @@ swifter==0.296
 pytest-cov==2.8.1
 inflection==0.3.1
 line_profiler==3.0.2
-poetry==1.0.9
+poetry==1.1.9
 
 # ML packages
 pandas==1.0.3
