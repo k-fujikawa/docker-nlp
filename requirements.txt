@@ -1,7 +1,7 @@
 # General packages
 kaggle==1.5.6
 prompter==0.3.10
-joblib==0.13.2
+joblib==1.2.0
 luigi==3.0.1
 gokart==0.3.15
 colorlog==4.0.2
